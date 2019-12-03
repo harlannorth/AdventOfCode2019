@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ChallengeOne": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Source\\AdventOfCode2019\\Day1Challenge1\\ChallengeOne\\ChallengeOne\\input.txt"
+    }
+  }
+}
