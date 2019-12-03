@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ChallengeOne.InputLoader
+namespace ChallengeTwo.InputLoader
 {
     internal interface IInputLoader
     {

@@ -1,7 +1,7 @@
-﻿using ChallengeOne.InputLoader;
+﻿using ChallengeTwo.InputLoader;
 using System;
 
-namespace ChallengeOne
+namespace ChallengeTwo
 {
     class Program
     {
@@ -24,14 +24,26 @@ namespace ChallengeOne
             if (inputs == null)
                 throw new Exception("Parsed file returned no input");
 
-            int result = 0;
+            int fuelNeeded = 0;
             foreach(var mass in inputs)
             {
-                var dividedMass = (int)(mass / divisor) - subtract;
-                result += dividedMass;
+                var dividedMass = GetModuleFuel(mass);
+                fuelNeeded += dividedMass;
             }
 
-            Console.WriteLine(result);
+            Console.WriteLine(fuelNeeded);
+        }
+
+        static private int GetModuleFuel(int initialMass)
+        {
+            var dividedMass = (int)(initialMass / divisor) - subtract;
+            if (dividedMass <= 0)
+            {
+                return 0;
+            }
+
+            return dividedMass + GetModuleFuel(dividedMass);
+
         }
     }
 }
