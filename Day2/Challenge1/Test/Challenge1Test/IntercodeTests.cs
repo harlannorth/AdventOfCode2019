@@ -20,10 +20,8 @@ namespace Challenge1Test
         [TestMethod]
         public void TestRunWith99()
         {
-            var result = _intcode.RunIntCode("99");
-            //Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
-            Trace.Listeners.Add(new ConsoleTraceListener());
-            Trace.WriteLine("Hello World");
+            var result = _intcode.RunIntCode(new int[] {99});
+
             Assert.AreEqual(99,result[0]);
         }
 
@@ -31,7 +29,7 @@ namespace Challenge1Test
         [TestMethod]
         public void TestRunWithOneResult()
         {
-            var result = _intcode.RunIntCode("1,0,0,0,99");
+            var result = _intcode.RunIntCode(new int[] {1,0,0,0,99});
             Assert.AreEqual(2,result[0]);
         }
 
@@ -39,7 +37,7 @@ namespace Challenge1Test
         [TestMethod]
         public void TestRunWithTwoResults()
         {
-            var result = _intcode.RunIntCode("1,1,1,4,99,5,6,0,99");
+            var result = _intcode.RunIntCode(new int[] {1,1,1,4,99,5,6,0,99});
             Assert.AreEqual(30,result[0]);
             Assert.AreEqual(2,result[4]);
         }
@@ -48,14 +46,14 @@ namespace Challenge1Test
         [TestMethod]
         public void TestRunWithOneMidResult()
         {
-            var result = _intcode.RunIntCode("2,3,0,3,99");
+            var result = _intcode.RunIntCode(new int[] {2,3,0,3,99});
             Assert.AreEqual(6,result[3]);
         }
 
         [TestMethod]
         public void TestRunWithOneEndResult()
         {
-            var result = _intcode.RunIntCode("2,4,4,5,99,0");
+            var result = _intcode.RunIntCode(new int[] {2,4,4,5,99,0});
             Assert.AreEqual(9801,result[5]);
         }
 

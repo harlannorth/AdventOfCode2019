@@ -7,9 +7,9 @@ namespace Challenge1
     {
         private const char delimiter = ',';
 
-        public int[] RunIntCode(string input)
+        public int[] RunIntCode(int[] input)
         {
-            var program = ParseInput(input);
+            var program = input;
 
             var currentPosition = 0;
             var complete = false;
